@@ -20,20 +20,20 @@
 #include "minunit.h"
 
 
-void all_tests() {
+void all_test() {
 	mu_run_test(test_checkGame);
 	mu_run_test(test_computeTime);
 	mu_run_test(test_computePrize);
 }
 
 
-int run_all_tests(int argc, char **argv) {
+int run_all_test(int argc, char **argv) {
 	if(argv<2 || strcmp(argv[1], "-test")!=0)
 	{
 		return -1;
 	}
 	printf("\nESEGUO I TEST\n");
-	all_tests();
+	all_test();
 	printf("\nTest eseguiti: %d\n",test_run);
 	printf("\nTest eseguiti con successo: %d\n",test_passed);
 }
