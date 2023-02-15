@@ -20,6 +20,19 @@
 #include "minunit.h"
 
 
+void test_computeTime() {
+mu_assert("ERRORE in funzione computeTime(), (250000>=250000)",computeTime(250000)==249000);
+    mu_assert("ERRORE in funzione computeTime(), (300000>=250000)",computeTime(300000)==299000);
+    mu_assert("ERRORE in funzione computeTime(), (560000>=250000)",computeTime(560000)==559000);
+    mu_assert("ERRORE in funzione computeTime(), (230000>=200000)",computeTime(230000)==229400);
+    mu_assert("ERRORE in funzione computeTime(), (200000>=200000)",computeTime(200000)==199400);
+    mu_assert("ERRORE in funzione computeTime(), (229000>=200000)",computeTime(229000)==223000);
+    mu_assert("ERRORE in funzione computeTime(), (190000<200000)",computeTime(190000)==189800);
+    mu_assert("ERRORE in funzione computeTime(), (66000<200000)",computeTime(66000)==65800);
+    mu_assert("ERRORE in funzione computeTime(), (1000<200000)",computeTime(1000)==800);
+    mu_assert("ERRORE in funzione computeTime(), (150000<200000)-200",computeTime(150000)==148000);
+}
+
 void all_test() {
 	mu_run_test(test_checkGame);
 	mu_run_test(test_computeTime);
