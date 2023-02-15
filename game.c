@@ -19,6 +19,25 @@
 #include "appearance.h"
 #include "minunit.h"
 
+
+void all_tests() {
+	mu_run_test(test_checkGame);
+	mu_run_test(test_computeTime);
+	mu_run_test(test_computePrize);
+}
+
+
+int run_all_tests(int argc, char **argv) {
+	if(argv<2 || strcmp(argv[1], "-test")!=0)
+	{
+		return -1;
+	}
+	printf("\nESEGUO I TEST\n");
+	all_tests();
+	printf("\nTest eseguiti: %d\n",test_run);
+	printf("\nTest eseguiti con successo: %d\n",test_passed);
+}
+
 // Check if the game is going to be finished in this turn of loop
 
 /**

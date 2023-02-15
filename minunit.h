@@ -9,10 +9,7 @@ extern int tests_run;
 extern int tests_passed;
 
 
-void all_tests() {
-	mu_run_test(test_checkGame);
-	mu_run_test(test_computeTime);
-	mu_run_test(test_computePrize);
+
 	
 
 int run_all_tests(int argc, char **argv);
