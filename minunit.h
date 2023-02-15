@@ -8,10 +8,18 @@
 extern int tests_run;
 extern int tests_passed;
 
+
+void all_tests() {
+	mu_run_test(test_checkGame);
+	mu_run_test(test_computeTime);
+	mu_run_test(test_computePrize);
+	
+
 int run_all_tests(int argc, char **argv);
 
 #define mu_assert(message, test) do \
 { \
+	tests_run++; \
 	if (!(test)) \
 		printf("%s\n",message); \
 	else \
@@ -22,7 +30,6 @@ while (0)
 #define mu_run_test(test) do \
 { \
 	test(); \
-	tests_run++; \
 } \
 while (0)
 
