@@ -19,6 +19,8 @@
 #include "appearance.h"
 #include "minunit.h"
 
+int test_run=0;
+int test_passed = 0;
 
 void test_computeTime() {
 mu_assert("ERRORE in funzione computeTime(), (250000>=250000)",computeTime(250000)==249000);
@@ -308,6 +310,21 @@ int run_all_tests(int argc, char **argv) {
     printf("Total number of tests: %d\n", tests_run);
 	printf("Tests passed: %d\n", tests_passed);
 	return tests_run-tests_passed;
+}
+
+void test_checkGame
+{
+	int oracolo = 0;
+	mu_assert("Errore nella funzione check_Game(), (diX+14)-x=4", checkGame(5, 20, 5, 10) == oracolo);
+	mu_assert("Errore nella funzione check_Game(), (diX+14)-x<4", checkGame(2, 17, 2, 3) == oracolo);
+	mu_assert("Errore nella funzione check_Game(), (diY==y)", checkGame(5, 20, 5, 10) == oracolo);
+	mu_assert("Errore nella funzione check_Game(), (diX+14)-x<4", checkGame(7, 140, 7, 3) == oracolo);
+	mu_assert("Errore nella funzione check_Game(), (diX+14)-x<4", checkGame(7, 32, 7, 5) == oracolo);
+	mu_assert("Errore nella funzione check_Game(), (diX+14)-x<4", checkGame(4, 39, 4, 1) == oracolo);
+	mu_assert("Errore nella funzione check_Game(), (diX+14)-x<4", checkGame(4, 28, 4, 2) == oracolo);
+	mu_assert("Errore nella funzione check_Game(), (diX+14)-x<4", checkGame(2, 17, 2, 3) == oracolo);
+	mu_assert("Errore nella funzione check_Game(), (diY=y)", checkGame(7, 140, 7, 3) == oracolo);
+	mu_assert("Errore nella funzione check_Game(), (diX+14)-x<4", checkGame(7, 320, 7, 5) == oracolo);
 }
 //
 // END of tests section
